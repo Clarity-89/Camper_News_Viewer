@@ -36,10 +36,10 @@
     {{#each data}}
     <div class="article col-xs-12 col-md-3"><img src="{{author.picture}}" class="img-thumbnail ava">
 
-        <div class=""><a target="_blank" href="{{link}}"><p class="headline">{{headline}}</p>
-        </a><i class="fa fa-thumbs-up"></i>{{rank}}
-            Posted by {{author.username}} on {{date-format timePosted}}
-        </div>
+        <a target="_blank" href="{{link}}" id="headline">{{headline}}</a> <br>
+        <i class="fa fa-thumbs-up"></i>{{rank}}
+        Posted by {{author.username}} on {{date-format timePosted}}
+
     </div>
     {{/each}}
 

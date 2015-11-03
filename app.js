@@ -14,7 +14,8 @@ $(document).ready(function () {
             }).sort(function (a, b) {
                 return b.rank - a.rank;
             });
-
+            //Limit top rated headlines to 4
+            topRated.length = 4;
             var rest = data.filter(function (el) {
                 return topRated.indexOf(el) == -1;
             });
@@ -33,7 +34,6 @@ $(document).ready(function () {
                 data: topRated
             });
             $('#news').html(context);
-
 
 
         },
