@@ -24,15 +24,25 @@
 <body>
 <div class="container">
 
-    <div class="loading"><div id="load_txt"><h3>Getting the data...</h3></div></div>
+    <div id="news" class="row">
+        <div class="loading">
+            <div id="load_txt"><h3>Getting the data...</h3></div>
+        </div>
+    </div>
 </div>
 
 <script id="display" type="text/x-handlebars-template">
-    <ul>
-        {{each data}}
-        <li></li>
-        {{/each}}
-    </ul>
+
+    {{#each data}}
+    <div class="article col-xs-12 col-md-3"><img src="{{author.picture}}" class="img-thumbnail ava">
+
+        <div class=""><a target="_blank" href="{{link}}"><p class="headline">{{headline}}</p>
+        </a><i class="fa fa-thumbs-up"></i>{{rank}}
+            Posted by {{author.username}} on {{date-format timePosted}}
+        </div>
+    </div>
+    {{/each}}
+
 </script>
 <!-- jQuery-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
