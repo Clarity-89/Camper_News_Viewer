@@ -7,15 +7,14 @@ $(document).ready(function () {
     //get the data
     $.getJSON('http://www.freecodecamp.com/news/hot').then(
         function (data) {
-            console.log('Success', data);
-            //Create lit of headlines with 20 or more than upvotes
-            var topRated = data.filter(function (el) {
-                return el.rank >= 20;
-            }).sort(function (a, b) {
+
+            //Sort the data to get top rated headlines
+            var topRated = data.concat().sort(function (a, b) {
                 return b.rank - a.rank;
             });
             //Limit top rated headlines to 4
             topRated.length = 4;
+            console.log('Success', data);
             var rest = data.filter(function (el) {
                 return topRated.indexOf(el) == -1;
             });
