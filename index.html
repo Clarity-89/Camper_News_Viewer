@@ -39,7 +39,7 @@
 
     {{#each data}}
     <div class="col-xs-12 col-sm-6 col-md-3">
-        <div class="article">
+        <div class="article frosted-glass">
             <img src="{{ternary image image 'https://lh3.googleusercontent.com/Pdjv-ZsNrm_1raPd_HAaOZdsClTKjszKX_g5omk01A=s630'}}"
                  class="img-thumbnail ava">
 
@@ -56,14 +56,16 @@
 
 <script id="rest" type="text/x-handlebars-template">
     <h1>Latest headlines</h1>
-    <dl class="dl-horizontal">
+
         {{#each data2}}
+    <dl class="dl-horizontal frosted-glass">
         <dt><img src="{{author.picture}}"
                  class="img-thumbnail ava2"></dt>
         <dd>{{date-format timePosted}}<br>
-            <a target="_blank" href="{{link}}"><p>{{headline}}</p></a></dd>
-        {{/each}}
+            <a target="_blank" href="{{link}}"><p class="headline2">{{headline}}</p></a></dd>
     </dl>
+        {{/each}}
+
 </script>
 <!-- jQuery-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
