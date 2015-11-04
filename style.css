@@ -62,7 +62,7 @@ body,
   float: left;
   margin-top: 10px;
 }
-.fa-thumbs-up {
+.col-md-3 .fa-thumbs-up {
   position: absolute;
   bottom: 10px;
   left: 15px;
@@ -73,26 +73,15 @@ body,
 .username {
   font-size: 16px;
 }
-.article::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  margin: -30px;
-  z-index: -1;
-  -webkit-filter: blur(20px);
-  filter: blur(20px);
-}
 h1 {
   text-align: center;
 }
 .ava2 {
   width: 80px;
   height: 80px;
+  margin: 0 auto;
 }
 .headline2 {
-  color: #000;
+  color: #fff;
   font-size: 130%;
 }

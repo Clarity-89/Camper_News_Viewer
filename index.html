@@ -59,10 +59,14 @@
 
         {{#each data2}}
     <dl class="dl-horizontal frosted-glass">
-        <dt><img src="{{author.picture}}"
-                 class="img-thumbnail ava2"></dt>
+        <dt style=><img src="{{author.picture}}"
+                 class=" img-responsive ava2">
+        </dt>
         <dd>{{date-format timePosted}}<br>
-            <a target="_blank" href="{{link}}"><p class="headline2">{{headline}}</p></a></dd>
+            <a target="_blank" href="{{link}}"><p class="headline2">{{headline}}</p></a>
+            <i class="fa fa-thumbs-up">{{rank}}</i>  by <a target="_blank"
+                                                           href='http://www.freecodecamp.com/{{author.username}}' class="username">{{author.username}}</a>
+        </dd>
     </dl>
         {{/each}}
 
