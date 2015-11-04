@@ -12,12 +12,14 @@ $(document).ready(function () {
             var topRated = data.concat().sort(function (a, b) {
                 return b.rank - a.rank;
             });
+
             //Limit top rated headlines to 4
             topRated.length = 4;
             console.log('Success', data);
             var rest = data.filter(function (el) {
                 return topRated.indexOf(el) == -1;
             });
+
             //Helper function to format time as Month Day Year
             Handlebars.registerHelper('date-format', function (inputDate) {
                 //Make sure date is of type 'date'
@@ -26,6 +28,12 @@ $(document).ready(function () {
                     'September', 'October', 'November', 'December'];
                 return month[date.getMonth()] + ' ' + date.getDate() + ' ' + date.getFullYear();
             });
+
+            //Ternary helper
+            Handlebars.registerHelper('ternary', function(test, yes, no) {
+                return test ? yes : no;
+            });
+
             //Build template for top rated headlines
             var source = $('#display').html();
             var template = Handlebars.compile(source);
