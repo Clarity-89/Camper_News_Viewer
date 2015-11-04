@@ -1,5 +1,4 @@
 body {
-  /*background-color: @background;*/
   background-size: cover;
   font-family: 'Lato', sans-serif;
   color: #fff;
@@ -77,11 +76,12 @@ h1 {
   text-align: center;
 }
 .ava2 {
-  width: 80px;
-  height: 80px;
-  margin: 0 auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 100px;
 }
 .headline2 {
   color: #fff;
-  font-size: 130%;
+  font-size: 150%;
 }

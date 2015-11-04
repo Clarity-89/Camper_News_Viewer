@@ -57,18 +57,21 @@
 <script id="rest" type="text/x-handlebars-template">
     <h1>Latest headlines</h1>
 
-        {{#each data2}}
+    {{#each data2}}
     <dl class="dl-horizontal frosted-glass">
-        <dt style=><img src="{{author.picture}}"
-                 class=" img-responsive ava2">
+        <dt style=><img
+                src="{{ternary image image 'https://lh3.googleusercontent.com/Pdjv-ZsNrm_1raPd_HAaOZdsClTKjszKX_g5omk01A=s630'}}"
+                class="img-responsive ava2">
         </dt>
         <dd>{{date-format timePosted}}<br>
             <a target="_blank" href="{{link}}"><p class="headline2">{{headline}}</p></a>
-            <i class="fa fa-thumbs-up">{{rank}}</i>  by <a target="_blank"
-                                                           href='http://www.freecodecamp.com/{{author.username}}' class="username">{{author.username}}</a>
+            by <a target="_blank"
+                  href='http://www.freecodecamp.com/{{author.username}}' class="username">{{author.username}}</a>
+            <i class="fa fa-thumbs-up">{{rank}}</i>
+
         </dd>
     </dl>
-        {{/each}}
+    {{/each}}
 
 </script>
 <!-- jQuery-->
