@@ -3,7 +3,7 @@
 
 body {
   /*background-color: @background;*/
-  background: url('img/background.jpg');
+  background: url('img/background.jpg') fixed;
   background-size: cover;
   font-family: @font;
   color: #fff;
@@ -29,8 +29,8 @@ body {
 }
 
 .ava {
-  width: 90px;
-  height: 90px;
+  width: 80px;
+  height: 80px;
   float: left;
   margin-right: 5px;
 }
@@ -50,7 +50,23 @@ body {
   #headline {
     font-size: 130%;
     color: #fff;
+    float: left;
+    margin-top: 10px;
   }
+}
+
+.fa-thumbs-up {
+  position: absolute;
+  bottom: 10px;
+  left: 15px;
+}
+
+.time-posted {
+  font-size: 13px;
+}
+
+.username {
+  font-size: 16px;
 }
 
 .article::before {
@@ -68,5 +84,9 @@ body {
 
 h1 {
   text-align: center;
-  color: #fff;
+}
+
+.ava2 {
+  width: 80px;
+  height: 80px;
 }

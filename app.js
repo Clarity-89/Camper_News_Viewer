@@ -30,7 +30,7 @@ $(document).ready(function () {
             });
 
             //Ternary helper
-            Handlebars.registerHelper('ternary', function(test, yes, no) {
+            Handlebars.registerHelper('ternary', function (test, yes, no) {
                 return test ? yes : no;
             });
 
@@ -42,7 +42,13 @@ $(document).ready(function () {
             });
             $('#news').html(context);
 
-
+            // Template for the 'rest' list
+            var source2 = $('#rest').html();
+            var template2 = Handlebars.compile(source2);
+            var context2 = template2({
+                data2: rest
+            });
+            $('#rest-news').html(context2);
         },
         function () {
             console.log('Request failed');
