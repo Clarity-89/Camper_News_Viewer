@@ -22,6 +22,13 @@ $(document).ready(function () {
                 return b.timePosted - a.timePosted;
             });
 
+            // Split rest array into chunks of length 10 for pagination
+            var i, j, k, result = [], chunk = 10;
+            for (i = 0, k = 0, j = rest.length; i < j; i += chunk, k++) {
+                result[k] = rest.slice(i, i + chunk);
+            }
+            console.log(result[0])
+
             //Helper function to format time as Month Day Year
             Handlebars.registerHelper('date-format', function (inputDate) {
                 //Make sure date is of type 'date'
@@ -44,13 +51,25 @@ $(document).ready(function () {
             });
             $('#news').html(context);
 
-            // Template for the 'rest' list
+            //Initial 10 entries of the 'rest' list
             var source2 = $('#rest').html();
-            var template2 = Handlebars.compile(source2);
+            var template2 = Handlebars.compile(source2, {noEscape: true});
             var context2 = template2({
-                data2: rest
+                data2: result[0]
             });
             $('#rest-news').html(context2);
+            $('#pagination').bootpag({
+                total: 10
+            }).on("page", function (event, num) {
+                // Template for the remainder of the 'rest' list
+                var source2 = $('#rest').html();
+                var template2 = Handlebars.compile(source2, {noEscape: true});
+
+                var context2 = template2({
+                    data2: result[num - 1]
+                });
+                $('#rest-news').html(context2); // some ajax content loading...
+            });
         },
         function () {
             console.log('Request failed');

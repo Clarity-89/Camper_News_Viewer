@@ -31,8 +31,8 @@
         </div>
     </div>
     <div id="rest-news">
-
     </div>
+    <div id="pagination"></div>
 </div>
 
 <script id="display" type="text/x-handlebars-template">
@@ -41,12 +41,12 @@
     <div class="col-xs-12 col-sm-6 col-md-3">
         <div class="article frosted-glass">
             <img src="{{ternary image image 'https://lh3.googleusercontent.com/Pdjv-ZsNrm_1raPd_HAaOZdsClTKjszKX_g5omk01A=s630'}}"
-                 class="img-thumbnail ava">
+                 class="img-thumbnail ava" style="float: left; ">
 
             <span class="time-posted">{{date-format timePosted}}</span>
             <br> by <a target="_blank"
                        href='http://www.freecodecamp.com/{{author.username}}' class="username">{{author.username}}</a>
-            <br> <a target="_blank" href="{{link}}" id="headline"><p>{{headline}}</p></a>
+            <br> <a target="_blank" href="{{link}}" id="headline"><p>{{escape headline}}</p></a>
             <i class="fa fa-thumbs-up">{{rank}}</i>
         </div>
     </div>
@@ -56,7 +56,6 @@
 
 <script id="rest" type="text/x-handlebars-template">
     <h1>Latest headlines</h1>
-
     {{#each data2}}
     <dl class="dl-horizontal frosted-glass">
         <dt style=><img
@@ -75,8 +74,11 @@
 </script>
 <!-- jQuery-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="libs/list.min.js"></script>
+<script src="libs/jquery.bootpag.min.js"></script>
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
 <!--Handlebars-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.min.js"></script>
 <script src="app.js"></script>
