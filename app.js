@@ -18,6 +18,8 @@ $(document).ready(function () {
             console.log('Success', data);
             var rest = data.filter(function (el) {
                 return topRated.indexOf(el) == -1;
+            }).concat().sort(function (a, b) {
+                return b.timePosted - a.timePosted;
             });
 
             //Helper function to format time as Month Day Year
